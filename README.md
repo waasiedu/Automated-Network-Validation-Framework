@@ -27,8 +27,8 @@ This project simulates those workflows in a simple, repeatable way.
 - Packet loss estimation
 - Consolidated validation report
 ## Project Structure
-src/ Validation logic
-config/ Topology configuration
+src/ Validation logic //
+config/ Topology configuration //
 sample_output/ Example validation output
 ## Usage
 
