@@ -27,13 +27,12 @@ This project simulates those workflows in a simple, repeatable way.
 - Packet loss estimation
 - Consolidated validation report
 ## Project Structure
-src/ Validation logic //
-config/ Topology configuration //
-sample_output/ Example validation output
+- src/ Validation logic 
+- config/ Topology configuration 
+- sample_output/ Example validation output
 ## Usage
-
-1. Install dependencies:
 ```bash
+1. Install dependencies:
 pip install -r requirements.txt
 2. Define your topology:
 Edit config/topology.yaml
