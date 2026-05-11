@@ -1,0 +1,77 @@
+devices:
+  - name: core-r1
+    hostname: core-r1.lab.local
+    mgmt_ip: 192.168.100.11
+    site: nyc
+    role: core
+    platform: cisco_ios
+    os_version: "17.9"
+    ansible_user: admin
+    ansible_network_os: cisco.ios.ios
+    expected_state:
+      reachable: true
+      latency_ms: 8
+      packet_loss_percent: 0
+      routing_protocols:
+        ospf: up
+        bgp: up
+      critical_routes:
+        - 10.10.10.0/24
+        - 10.20.20.0/24
+
+  - name: core-r2
+    hostname: core-r2.lab.local
+    mgmt_ip: 192.168.100.12
+    site: nyc
+    role: core
+    platform: cisco_ios
+    os_version: "17.9"
+    ansible_user: admin
+    ansible_network_os: cisco.ios.ios
+    expected_state:
+      reachable: true
+      latency_ms: 9
+      packet_loss_percent: 0
+      routing_protocols:
+        ospf: up
+        bgp: up
+      critical_routes:
+        - 10.10.10.0/24
+        - 10.20.20.0/24
+
+  - name: dist-r1
+    hostname: dist-r1.lab.local
+    mgmt_ip: 192.168.100.21
+    site: chi
+    role: distribution
+    platform: arista_eos
+    os_version: "4.30"
+    ansible_user: admin
+    ansible_network_os: arista.eos.eos
+    expected_state:
+      reachable: true
+      latency_ms: 14
+      packet_loss_percent: 0
+      routing_protocols:
+        ospf: up
+        bgp: down
+      critical_routes:
+        - 10.30.30.0/24
+
+  - name: access-sw1
+    hostname: access-sw1.lab.local
+    mgmt_ip: 192.168.100.31
+    site: chi
+    role: access
+    platform: cisco_ios
+    os_version: "15.2"
+    ansible_user: admin
+    ansible_network_os: cisco.ios.ios
+    expected_state:
+      reachable: true
+      latency_ms: 4
+      packet_loss_percent: 0
+      routing_protocols:
+        ospf: down
+        bgp: down
+      critical_routes: []

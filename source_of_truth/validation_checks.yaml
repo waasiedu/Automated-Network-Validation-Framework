@@ -1,0 +1,32 @@
+validation_checks:
+  reachability:
+    enabled: true
+    description: Confirm that each device is reachable.
+    required: true
+
+  latency:
+    enabled: true
+    description: Confirm device latency is below threshold.
+    max_latency_ms: 50
+    required: true
+
+  packet_loss:
+    enabled: true
+    description: Confirm packet loss is below threshold.
+    max_packet_loss_percent: 1
+    required: true
+
+  routing:
+    enabled: true
+    description: Confirm expected routing protocol state.
+    required: false
+    protocols:
+      ospf:
+        expected_state: up
+      bgp:
+        expected_state: up
+
+  critical_routes:
+    enabled: true
+    description: Confirm critical routes exist on devices.
+    required: false

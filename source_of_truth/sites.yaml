@@ -1,0 +1,22 @@
+sites:
+  - name: nyc
+    description: New York primary network site
+    region: us-east
+    address: New York, NY
+    timezone: America/New_York
+    site_code: NYC
+    subnets:
+      management: 192.168.100.0/24
+      users: 10.10.10.0/24
+      servers: 10.20.20.0/24
+
+  - name: chi
+    description: Chicago secondary network site
+    region: us-central
+    address: Chicago, IL
+    timezone: America/Chicago
+    site_code: CHI
+    subnets:
+      management: 192.168.100.0/24
+      users: 10.30.30.0/24
+      servers: 10.40.40.0/24
